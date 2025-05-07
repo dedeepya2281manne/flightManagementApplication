@@ -1,0 +1,39 @@
+spring:
+  application:
+    name: flightManagementApplication
+  doc:
+    api-docs:
+      enabled: true
+  datasource:
+    url: jdbc:mysql://localhost:3306/flightbookings
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  second-datasource:
+    url: jdbc:mysql://localhost:3306/secondarydb
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#    hikari:
+#      connectionTimeout: 30000
+#      idleTimeout: 60000
+#      maximum-pool-size: 10
+#      maxLifeTime: 1800000
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always
+
+
